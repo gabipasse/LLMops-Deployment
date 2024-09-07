@@ -20,9 +20,7 @@ from transformers.modeling_outputs import SequenceClassifierOutput
 from numpy import float64
 
 load_dotenv()
-
 tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
-
 params = {
     "model_name": "distilbert-base-uncased",
     "learning_rate": 5e-5,
@@ -36,7 +34,6 @@ params = {
 }
 
 mlflow.set_tracking_uri(tracking_uri)
-
 mlflow.set_experiment(params["task_name"])
 run = mlflow.start_run(run_name=f"{params['model_name']}-{params['dataset_name']}")
 mlflow.log_params(params)
@@ -58,12 +55,9 @@ def tokenize(batch: LazyBatch) -> BatchEncoding:
     )
 
 
-train_dataset = (
-    dataset["train"].shuffle().select(range(20_000)).map(tokenize, batched=True)
-)
-test_dataset = (
-    dataset["test"].shuffle().select(range(2_000)).map(tokenize, batched=True)
-)
+# TODO MODIFICAR PARA 20k e 2k
+train_dataset = dataset["train"].shuffle().select(range(20)).map(tokenize, batched=True)
+test_dataset = dataset["test"].shuffle().select(range(20)).map(tokenize, batched=True)
 
 train_dataset.to_parquet("data/train.parquet")
 test_dataset.to_parquet("data/test.parquet")
@@ -173,7 +167,7 @@ with tqdm(
             step=epoch_counting_from_1,
         )
 
-
+# Input example is not set because we are using a Dataloader as input
 mlflow.pytorch.log_model(model, "model")
 model_uri = f"runs:/{run.info.run_id}/model"
 model_name = "agnews_pt_classifier"
