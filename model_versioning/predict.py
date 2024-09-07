@@ -99,7 +99,7 @@ print()
 mlflow.set_experiment("sequence_classification")
 with mlflow.start_run(run_name="iteration3") as run:
     model_uri = f"runs:/{run.info.run_id}/model"
-    mlflow.pytorch.log_model(model, "model", input_example=sample_texts)
+    mlflow.pytorch.log_model(model, "model")
     registered_model_details = mlflow.register_model(model_uri, model_name)
 
 model_versions = client.search_model_versions(f"name='{model_name}'")
