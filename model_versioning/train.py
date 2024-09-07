@@ -127,13 +127,13 @@ def main():
     train_dataset = (
         dataset["train"]
         .shuffle()
-        .select(range(20_000))
+        .select(range(200))
         .map(lambda batch: tokenize(batch, tokenizer, params), batched=True)
     )
     test_dataset = (
         dataset["test"]
         .shuffle()
-        .select(range(2_000))
+        .select(range(20))
         .map(lambda batch: tokenize(batch, tokenizer, params), batched=True)
     )
 
@@ -237,5 +237,5 @@ def main():
     mlflow.end_run()
 
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
     main()

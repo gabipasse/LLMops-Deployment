@@ -1,5 +1,7 @@
 # Ignore configuration files
 .env
-mlflow_server
+mlflow-artifacts
+basic_auth.db
+mlflow.db
 data
 models

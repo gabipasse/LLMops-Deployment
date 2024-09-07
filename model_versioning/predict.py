@@ -112,9 +112,9 @@ def main():
         f"{custom_model_local_path}/custom_model"
     )
 
-    custom_model.to(device)
+    custom_model.to(avaible_device)
     predictions_from_custom_model = predict(
-        sample_texts, custom_model, custom_tokenizer
+        sample_texts, custom_model, custom_tokenizer, avaible_device
     )
     print()
     print(f"Predictions from custom model: {predictions_from_custom_model}")
