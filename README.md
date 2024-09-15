@@ -6,9 +6,6 @@
 ![Static Badge](https://img.shields.io/badge/Typing-%23ffffff?style=for-the-badge&logo=Python&logoColor=black&labelColor=%233776AB&color=white)
 
 
-
-# LLMops Model Versioning
-
 This project offers a path to version models, data, and runs using MLflow. This approach enables data professionals to compare model performances after changes to model hyperparameters, application architecture, data ingestion, and/or metrics used.
 
 Comparing the performance of a data solution allows the data professional to select a model that balances latency, throughput, reliability, accuracy metrics, and other performance indicators. It is important not only to have the model with the best accuracy but also one that can be more easily implemented in the overall data solution.
