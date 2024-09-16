@@ -44,7 +44,7 @@ However, as always, the first step in deciding whether to use an LLM solution is
 
 ## MLOps Best Practices
 
-The versioning code is divided into files by each overall goal: authentication setup, training logging, and inferencing. Defined and used functions have docstrings to simplify debugging and code refactoring. Type hints are used for the same goal. The latter is especially useful because some objects from the `torch` and `transformers` libraries are similar, with the same methods but different architectures. For example, `FastTokenizer` (line 79) is used for smaller input data, while `LazyTokenizer` (line 123) is used for larger data volumes. Lazy models delay the loading of the model's full state until it is actually needed, drastically reducing the initial memory footprint.
+The versioning code is divided into files by each overall goal: authentication setup, training logging, and inferencing. Defined and used functions have docstrings to simplify debugging and code refactoring. Type hints are used for the same goal. The latter is especially useful because some objects from the `torch` and `transformers` libraries are similar, with the same methods but different architectures. For example, `FastTokenizer` is used for smaller input data, while `LazyTokenizer` is used for larger data volumes. Lazy models delay the loading of the model's full state until it is actually needed, drastically reducing the initial memory footprint.
 
 ## Fine-tuning
 
