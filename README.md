@@ -70,3 +70,7 @@ The versioning code is divided into files by each overall goal: authentication s
 Each of the models registered during the latter stage is instantiated from the MLflow artifact storage. Two simple demonstration examples are defined to showcase the difference in performance results of the fine-tuning process executed. As the demonstration examples are small, the fast version of the distillbert base uncased tokenizer is used to tokenize the inputs for the registered base torch model. Both models are used for inferencing separately, and their results are compared.
 
 After inferencing, a new run is executed to log and register a new version of the base model. In MLflow, it is possible to keep multiple versions of a model, allowing the data professional to switch to the preferred one based on context and goals. After logging the new version of the base torch model, the previous version is chosen to be deleted. To demonstrate, the registered model itself is then deleted.
+
+> "With words one man can make another blessed, or drive him to despair" 
+> — Sigmund Freud
+
