@@ -93,7 +93,7 @@ def main():
     )
     run_id = custom_model_version_details.run_id
     artifact_path_original: str = custom_model_version_details.source
-    artifact_path_modified = artifact_path_original.replace("file:///", "")
+    artifact_path_modified = artifact_path_original.replace("file:", "")
     custom_model_local_path = "models/agnews_transformer"
     os.makedirs(custom_model_local_path, exist_ok=True)
 

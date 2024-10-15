@@ -5,3 +5,4 @@ basic_auth.db
 mlflow.db
 data
 models
+llmops
