@@ -162,7 +162,9 @@ def main():
     avaible_device = device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(avaible_device)
 
-    optimizer = torch.optim.AdamW(model.parameters(), lr=params["learning_rate"])
+    optimizer = torch.optim.AdamW(
+        model.parameters(), lr=params["learning_rate"], weight_decay=0.01
+    )
 
     # Using tqdm for better visualizations of the training process
     with tqdm(
