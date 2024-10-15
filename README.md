@@ -19,7 +19,7 @@ However, as always, the first step in deciding whether to use an LLM solution is
 
 2. **Install Dependencies**
 
-   - First, visit [PyTorch's Get Started page](https://pytorch.org/get-started/locally/) to select and install the appropriate CUDA version for your system if you require GPU support.
+   - First, visit [PyTorch's Get Started page](https://pytorch.org/get-started/locally/) to select and install the appropriate CUDA or CPU version for your system.
 
    - Next, install the necessary dependencies and sub-dependencies listed in the `requirements.txt` file by running:
      ```bash
